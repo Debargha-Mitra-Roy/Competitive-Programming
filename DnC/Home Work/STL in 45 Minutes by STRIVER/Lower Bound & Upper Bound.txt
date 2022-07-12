@@ -1,0 +1,180 @@
+Q1 :- Check if X exists in the sorted array or not ?
+
+Ans :-
+
+	# BINARY SEARCH :-
+
+	arr[] = {1, 4, 5, 8, 9}
+
+	bool res = binary_search(arr, arr + n, 3); // from first iterator to last iterator if the array contain 3 or not
+
+	-> returns false
+
+	bool res = binary_search(arr, arr + n, 4); // from first iterator to last iterator if the array contain 3 or not
+
+	-> returns true
+
+
+	# LOWER BOUND FUNCTION (lower_bound()) :-
+	
+	arr[] = {1, 4, 5, 6, 9, 9}
+
+	if the element occur then it returns the iterator indicates, but if the element not occur in the array then it returns the iterator indicates after the greater element
+
+	int ind = lower_bound(arr, arr + n, 4) - arr;
+
+	-> returns 1
+
+	int ind = lower_bound(arr, arr + n, 7) - arr;
+
+	-> returns 4
+
+	int ind = lower_bound(arr, arr + n, 10) - arr;
+
+	-> returns 6
+
+	int ind = lower_bound(arr.begin(), arr.end(), arr) - arr.begin();
+
+
+	# UPPER BOUND FUNCTION (upper_bound()) :-
+
+	arr[] = {1, 4, 5, 6, 9, 9}
+
+	if the element occur then it returns the next iterator indicates, but if the element not occur in the array then it returns the iterator indicates after the greater element
+
+	int ind = upper_bound(arr, arr + n, 4) - arr;
+
+	-> returns 2
+
+	int ind = upper_bound(arr, arr + n, 7) - arr;
+
+	-> returns 4
+
+	int ind = upper_bound(arr, arr + n, 10) - arr;
+
+	-> returns 6
+
+	int ind = upper_bound(arr.begin(), arr.end(), arr) - ar0r.begin();
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Q2 :- Find the first occurance of X in a sorted array. If it does not exists, print -1 ?
+
+Ans :-
+	
+	arr[] = {1, 4, 4, 4, 4, 9, 9, 10, 11}
+
+	int ind = lower_bound(arr, arr + n, X) - arr;
+
+	if (ind != n && arr[ind] == X)
+		cout << ind << "\n";
+
+	else
+		cout << "-1\n";
+
+eg :-
+	for X = 4
+
+	-> returns 1
+
+	for X = 2
+
+	-> returns -1
+
+	for X = 12
+
+	-> returns -1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Q3 :- Find the last occurance of X in a sorted array. If it does not exists, print -1 ?
+
+Ans :-
+	
+	arr[] = {1, 4, 4, 4, 4, 9, 9, 10, 11}
+
+	int ind = upper_bound(arr, arr + n, X) - arr;
+	ind--;
+
+	if (ind >= 0)
+		cout << ind << "\n";
+
+	else
+		cout << "-1\n";
+
+eg :-
+	for X = 4
+
+	-> returns 5
+
+	for X = 2
+
+	-> returns -1
+
+	for X = 12
+
+	-> returns -1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Q4 :- Find the largest number smaller than X in a sorted array. If no number exists, print -1 ?
+
+Ans :-
+	
+	arr[] = {1, 4, 4, 4, 4, 9, 9, 10, 11}
+
+	int ind = lower_bound(arr, arr + n, X) - arr;
+	ind--;
+
+	if (ind >= 0)
+		cout << arr[ind] << "\n";
+
+	else
+		cout << "-1\n";
+
+eg :-
+	for X = 4
+
+	-> returns 1
+
+	for X = 2
+
+	-> returns 1
+
+	for X = 12
+
+	-> returns -1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Q5 :- Find the smallest number greater than X in a sorted array. If no number exists, print -1 ?
+
+Ans :-
+	
+	arr[] = {1, 4, 4, 4, 4, 9, 9, 10, 11}
+
+	int ind = upper_bound(arr, arr + n, X) - arr;
+	ind--;
+
+	if (ind < n)
+		cout << arr[ind] << "\n";
+
+	else
+		cout << "-1\n";
+
+eg :-
+	for X = 4
+
+	-> returns 9
+
+	for X = 2
+
+	-> returns 4
+
+	for X = 1
+
+	-> returns 4
+
+	for X = 11
+
+	-> returns -1
